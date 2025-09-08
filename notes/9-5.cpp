@@ -1,0 +1,9 @@
+/*
+any problem thats solved recursively can also be solved iteratively
+
+NEGATVIES OF RECURSION
+recursion can add extra overhead by repeatedly calling the function
+can be expensive in processor time and memory
+can lead to stack overflow if not properly managed
+
+*/
