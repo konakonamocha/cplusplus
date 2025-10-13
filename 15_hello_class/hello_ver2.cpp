@@ -29,6 +29,8 @@ public:
     //copy constructor
     Hello(const Hello& other) {
         std::cout << "Copy constructor \n";
+        // allocate a new array
+        //copy the element from other.messages to messages
     }
 
     //destructor CANNOT BE OVERLOADED, NO ARGS
