@@ -2,20 +2,24 @@
 #include <iostream>
 
 // impliment constructor
-MyVector::MyVector(int capacity) : size(0) {
+template <typename T>
+MyVector<T>::MyVector(int capacity) : size(0) {
     this->capacity = capacity;
-    elements = new int(capacity);
+    elements = new T(capacity);
 }
 
-MyVector::~MyVector() {
+template <typename T>
+MyVector<T>::~MyVector() {
     delete [] elements;
 }
 
-MyVector::MyVector(const MyVector& other) {
+template <typename T>
+MyVector<T>::MyVector(const MyVector<T>& other) {
     // TODO 1
 }
 
-void MyVector::push_back(int value) {
+template <typename T>
+void MyVector<T>::push_back(const T& value) {
     if(size >= capacity) {
         allocate_memory(capacity * 2);
     }
@@ -23,7 +27,8 @@ void MyVector::push_back(int value) {
     size++;
 }
 
-int MyVector::pop_back(void){
+template <typename T>
+T MyVector<T>::pop_back(void){
     if(size > 0){
         if (size - 1 < capacity / 2){
             allocate_memory(capacity / 2);
@@ -36,7 +41,8 @@ int MyVector::pop_back(void){
     }
 }
 
-void MyVector::print() const {
+template <typename T>
+void MyVector<T>::print() const {
     std::cout << "[";
     for(int i = 0; i < size; i++) {
         std::cout << elements[i] << ' ';
@@ -45,11 +51,12 @@ void MyVector::print() const {
     std::cout << "]\n";
 }
 
-void MyVector::allocate_memory(int memory_size){
+template <typename T>
+void MyVector<T>::allocate_memory(int memory_size){
     capacity = memory_size;
-    int *old = elements;
+    T *old = elements;
     // allocate a new memory (bigger or smaller)
-    elements = new int[memory_size];
+    elements = new T[memory_size];
     for(int i = 0; i < size; i++){
         elements[i] = old[i];
     }
@@ -57,7 +64,8 @@ void MyVector::allocate_memory(int memory_size){
     delete [] old;
 }
 
-int& MyVector::at(int index){
+template <typename T>
+T& MyVector<T>::at(int index){
     if(index < 0 || index > size - 1) {
         throw "Invalid index!";
     }
