@@ -17,5 +17,6 @@ int main(void)
     //cout = console output (object of an iostream class)
     //<< stream insertion operator
     //endl = end of line
+    
     return 0;
 }
