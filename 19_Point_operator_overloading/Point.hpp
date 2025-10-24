@@ -1,5 +1,6 @@
 #ifndef POINT_HPP
 #define POINT_HPP
+#include <string>
 
 class Point {
 public:
@@ -16,6 +17,15 @@ public:
     //arithmetic assignment operator
     Point& operator+=(const Point& other);
     int& operator[](int index);
+
+    Point operator-();
+    Point operator++();
+    Point operator++(int );
+
+    //TODO
+
+
+    std::string toString(void) const;
 
 private:
     int x;

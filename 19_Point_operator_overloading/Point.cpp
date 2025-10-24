@@ -30,3 +30,26 @@ Point& Point::operator+=(const Point& other) {
     y += other.y;
     return *this;
 }
+
+std::string Point::toString(void) const {
+    return "(", std::to_string(x) + "," + std::to_string(y) + ")";
+}
+
+
+Point Point::operator-() {
+    return Point(-x, -y);
+}
+
+Point Point::operator++() {
+    x += 1;
+    y += 1;
+    return *this;
+}
+
+Point Point::operator++(int ) {
+    Point temp(*this);
+    Point temp(x,y);
+    this->x += 1;
+    this->y += 1;
+    return temp;
+}
