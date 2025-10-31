@@ -1,4 +1,4 @@
-#include "Point.hpp"
+/*#include "Point.hpp"
 #include <iostream>
 
 int main(void) {
@@ -36,3 +36,4 @@ int main(void) {
     std::cout << (char) p5[1];
     return 0;
 }
+    */
